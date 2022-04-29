@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="main.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<title>Document</title>
+	</head>
+	<body onload="rerenderSVG()">
+		<svg id='patternId' xmlns='http://www.w3.org/2000/svg'>
+			<defs>
+				<pattern id='stripes-pattern' patternUnits='userSpaceOnUse' width='20' height='80' patternTransform='scale(1) rotate(0)'>
+					<rect x='0' y='0' width='100%' height='100%' fill='hsla(205, 64%, 60%, 1)'/>
+					<path d='M0 10h20z' stroke-width='9.5' stroke='hsla(0, 100%, 0%, 1)' fill='none'/>
+					<path d='M0 30h20z' stroke-width='9.5' stroke='hsla(0, 100%, 0%, 1)' fill='none'/>
+					<path d='M0 50h20z' stroke-width='9.5' stroke='hsla(0, 100%, 0%, 1)' fill='none'/>
+					<path d='M0 70h20z' stroke-width='9.5' stroke='hsla(0, 100%, 0%, 1)' fill='none'/>
+				</pattern>
+				<pattern id='dots-pattern' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(1) rotate(0)'>
+					<rect x='0' y='0' width='100%' height='100%' fill='#56a4da'/>
+					<circle cx="10" cy="10" r="10"/>
+					<circle cx="30" cy="30" r="10"/>
+					<!-- <path d='M40 45a5 5 0 110-10 5 5 0 010 10zM0 45a5 5 0 110-10 5 5 0 010 10zM0 5A5 5 0 110-5 5 5 0 010 5zm40 0a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fll='hsla(259, 100%, 0%, 1)'/> -->
+					<!-- <path d='M20 25a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fill='hsla(259, 100%, 0%, 1)'/> -->
+				</pattern>
+			</defs>
+		</svg>
+		<div class="settings">
+			<div class="area-settings">
+				<select name="type" class="type-select" onchange="debounceRerender()">
+						<option value="cyst">ציסטה</option>
+						<option value="gush">גוש סולידי</option>
+				</select>
+				<span>בשעה</span>
+				<select name="hour" class="hour-select" onchange="debounceRerender()">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+				</select>
+				<span>במרחק</span>
+				<input type="number" class="dist-select" name="dist" min="0" max="7" step="0.1" value="0.1" onchange="debounceRerender()">
+				<span>ס"מ מהפיטמה</span>
+			</div>
+			<button onclick="addAreaSettings(event)">+</button>
+		</div>
+	</body>
+</html>
+
+
+
+
+

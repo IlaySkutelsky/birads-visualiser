@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100v;
+	direction: rtl;
+  background-color: turquoise;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
